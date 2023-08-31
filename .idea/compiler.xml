@@ -7,14 +7,16 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="BookMyCourtVer1" />
+        <module name="PerfectCourt" />
         <module name="CourtReserverplus" />
         <module name="Right4Court" />
-        <module name="PerfectCourt" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="BookMyCourtVer1" options="-parameters" />
       <module name="CourtReserverplus" options="-parameters" />
       <module name="PerfectCourt" options="-parameters" />
       <module name="Right4Court" options="-parameters" />

@@ -172,11 +172,12 @@ public class bookSlotRestController {
         System.out.println(slot);
         String gameMode= bookSlot.getGameMode();
         if (gameMode.equals("Singles")){
-            gameMode = "doubles";
+            gameMode = "Doubles";
         }else if (gameMode.equals("Doubles")){
-            gameMode = "singles";
+            gameMode = "Singles";
 
         }
+        bookSlot.setGameMode(gameMode);
         String msg = "Your Booking : "+ courtRepository.findByCode(bookSlot.getCourtCode()).getName()+"("+slot.getCourtCode()+")"+" Date : "+DateinText + " at " + slot.getStartHour() + " to " + slot.getEndHour() +"-"+gameMode;
         System.out.println(bookSlot.getConfirmStatus());
         System.out.println(notifies.getStatus());
@@ -283,9 +284,12 @@ public class bookSlotRestController {
                 int Size = bookSlotRepository.findByGameDateAndConfirmStatus(bookSlot.getGameDate(), "pending").size();
                 int Sizeaccpt = bookSlotRepository.findByGameDateAndConfirmStatus(bookSlot.getGameDate(), "accepted").size();
                 int SizeReject = bookSlotRepository.findByGameDateAndConfirmStatus(bookSlot.getGameDate(), "rejected").size();
+                int sizeListntf = bookSlotRepository.findByGameDateAndConfirmStatus(bookSlot.getGameDate(), "notified").size();
+                int sizeListntfdg = bookSlotRepository.findByGameDateAndConfirmStatus(bookSlot.getGameDate(), "notification agreed").size();
+                int sizeListntgag = bookSlotRepository.findByGameDateAndConfirmStatus(bookSlot.getGameDate(), "notification disagreed").size();
 
                 String statusColor= "white";
-                if(Size != 0){
+                if(Size != 0 || sizeListntf!= 0 || sizeListntfdg !=0 || sizeListntgag!=0){
                     statusColor="yellow";
                 }else if (Sizeaccpt != 0){
                     statusColor="green";
@@ -327,10 +331,13 @@ public class bookSlotRestController {
             int sizeList = bookSlotRepository.findByGameDateAndConfirmStatusAndSlotCode(dateModified, "pending", slot.getSlotCode()).size();
             List<BookSlot> sizeListAcc = bookSlotRepository.findByGameDateAndConfirmStatusAndSlotCode(dateModified, "accepted", slot.getSlotCode());
             int sizeListRej = bookSlotRepository.findByGameDateAndConfirmStatusAndSlotCode(dateModified, "rejected", slot.getSlotCode()).size();
+            int sizeListntf = bookSlotRepository.findByGameDateAndConfirmStatusAndSlotCode(dateModified, "notified", slot.getSlotCode()).size();
+            int sizeListntfdg = bookSlotRepository.findByGameDateAndConfirmStatusAndSlotCode(dateModified, "notification agreed", slot.getSlotCode()).size();
+            int sizeListntgag = bookSlotRepository.findByGameDateAndConfirmStatusAndSlotCode(dateModified, "notification disagreed", slot.getSlotCode()).size();
 
 
             String statusColor= "white";
-            if(sizeList != 0){
+            if(sizeList != 0 || sizeListntf!= 0 || sizeListntfdg !=0 || sizeListntgag!=0){
                 statusColor="yellow";
             }
 
