@@ -28,10 +28,10 @@
         <div class="row">
             <div class="container">
                 <table class="table caltable"></table>
-            </div>`
+            </div>
         </div>
     </div>
-
+    <h3>Selected Date : <i id = "current-date" ></i></h3>
     <div class="container">
 <!--        <form class="form-control" method="get" action="#">-->
 <!--            <div class="form-group">-->
@@ -123,6 +123,13 @@
                 </div>
             </div>
         </div>
+        <script>
+    $(document).ready(function() {
+        let params = new URLSearchParams(location.search);
+        console.log(params.get('date'))
+        $("#current-date").html(params.get('date'));
+    })
+</script>
     </div>
 
 </div>
