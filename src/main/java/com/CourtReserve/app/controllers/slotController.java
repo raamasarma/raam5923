@@ -371,7 +371,7 @@ public class slotController {
         HSSFRow Header = sheet.createRow(0);
         int headercellStart = 0;
         String header[] ={"gameDate","slotCode","gameMode","confirmStatus","bookedBy","approvedBy","RemarksByUser","RemarksByAdmin","bookTime"};
-       // String header[]={"gameDate","slotCode","game"};
+        // String header[]={"gameDate","slotCode","game"};
         DownloadCsvReport.getCsvReportDownload(response, header, list, "invoice_data.csv");
 
 //        for (String i : header) {
@@ -428,6 +428,12 @@ public class slotController {
         List<BookSlot> lists=bookSlotRepository.findByBookedBy(request.getSession().getAttribute("loggedMobile").toString());
         System.out.println("list:"+lists);
         System.out.println("Excel Size -- " + lists.size());
+
+        LocalDate d= lists.get(0).getGameDate();
+        String s=d.toString();
+        System.out.println("d:" + d);
+        System.out.println("s:" + s);
+
         WebContext context = new WebContext(request, response, request.getServletContext());
         context.setVariable("list", lists);
         String finalhtml = springTemplateEngine.process("admin/slotpdfWeb",context);

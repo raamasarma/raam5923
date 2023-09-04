@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="000b03e8-8eb7-4df3-aafe-718948a2d934" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CourtReserverplus.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jpa-buddy.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/CourtReserve/app/controllers/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/CourtReserve/app/controllers/GameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/CourtReserve/app/controllers/bookSlotController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/CourtReserve/app/controllers/bookSlotController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/CourtReserve/app/controllers/entryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/CourtReserve/app/controllers/entryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/CourtReserve/app/controllers/slotController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/CourtReserve/app/controllers/slotController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/CourtReserve/app/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/CourtReserve/app/models/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/CourtReserve/app/repositories/BookSlotRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/CourtReserve/app/repositories/BookSlotRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/bookslot.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/bookslot.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/viewSlots.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/viewSlots.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/customer/viewSlotsUser.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/customer/viewSlotsUser.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/entryTemplates/changePassword.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/entryTemplates/changePassword.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/entryTemplates/password.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/entryTemplates/password.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/entryTemplates/verification.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/entryTemplates/verification.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/layout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/CourtReserve/app/controllers/GameController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/CourtReserve/app/controllers/GameController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/CourtReserve/app/controllers/bookSlotController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/CourtReserve/app/controllers/bookSlotController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/CourtReserve/app/controllers/entryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/CourtReserve/app/controllers/entryController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/CourtReserve/app/controllers/slotController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/CourtReserve/app/controllers/slotController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/CourtReserve/app/models/BookSlot.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/CourtReserve/app/models/BookSlot.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/CourtReserve/app/models/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/CourtReserve/app/models/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/CourtReserve/app/models/UserLog.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/CourtReserve/app/models/UserLog.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/CourtReserve/app/repositories/BookSlotRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/CourtReserve/app/repositories/BookSlotRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/CourtReserve/app/restControllers/bookSlotRestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/CourtReserve/app/restControllers/bookSlotRestController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/CourtReserve/app/restControllers/entryRestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/CourtReserve/app/restControllers/entryRestController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/js/bookslot.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/bookslot.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/js/calendarUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/calendarUser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/admin/viewSlots.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/admin/viewSlots.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/customer/bookSlotUser.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/customer/bookSlotUser.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/customer/viewSlotsUser.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/customer/viewSlotsUser.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/entryTemplates/changePassword.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/entryTemplates/changePassword.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/entryTemplates/password.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/entryTemplates/password.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/entryTemplates/verification.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/entryTemplates/verification.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/layout.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2UvQbaqLkEWWrIxeL563Wa1Vhbc" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "CourtReserverplus.wasFacetEverAdded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "C:/panda project/BookMyCourtVer1/src/main/resources/templates/entryTemplates"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\panda project\BookMyCourtVer1\src\main\resources\templates\entryTemplates" />
+      <recent name="C:\panda project\BookMyCourtVer1\src\main\resources\templates\admin" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="AZURE_FUNCTION_SUPPORT" factoryName="Run Functions">
+      <option name="appName" />
+      <option name="appServicePlanName" />
+      <option name="appServicePlanResourceGroup" />
+      <option name="appSettingsKey" value="76b3c899-3c1f-47b3-9579-942f2550211e" />
+      <option name="artifact" />
+      <option name="debugOptions" />
+      <option name="deployment" />
+      <option name="deploymentStagingDirectoryPath" />
+      <option name="funcPath" />
+      <option name="functionHostArguments" />
+      <option name="hostJsonPath" />
+      <option name="insightsName" />
+      <option name="instrumentationKey" />
+      <option name="javaVersion" />
+      <option name="localSettingsJsonPath" />
+      <option name="moduleName" />
+      <option name="os" />
+      <option name="pricingTier" />
+      <option name="providerMap">
+        <map />
+      </option>
+      <option name="region" />
+      <option name="resourceGroup" />
+      <option name="stagingFolder" />
+      <option name="subscription" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AppApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.CourtReserve.app.AppApplication" />
+      <module name="CourtReserverplus" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.CourtReserve.app.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="BookMyCourtVer1" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="BookMyCourtVer1" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.AppApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="000b03e8-8eb7-4df3-aafe-718948a2d934" name="Changes" comment="" />
+      <created>1693817647691</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1693817647691</updated>
+    </task>
+    <servers />
+  </component>
+</project>

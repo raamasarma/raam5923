@@ -156,54 +156,7 @@ public class entryController {
         return result;
     }
 
-//    @GetMapping("/public/pwd")
-//    public String changePwdHtmlForm(){
-//        System.out.println("password");
-//        return "entryTemplates/changePassword";
-//    }
-//    @PostMapping("/public/pwd")
-//    public String changePwdHtmlForm(HttpServletRequest request, Model model, @RequestParam String mobileNo, @RequestParam String oldPassword) {
-//        System.out.println("333333333");
-//        System.out.println(mobileNo);
-//        System.out.println("22222222");
-//        System.out.println(oldPassword);
-//
-////        System.out.println(con_password);
-//        User user = userRepository.findByMobileNo(mobileNo);
-//
-//
-//        user.setPassword(oldPassword);
-//        userRepository.save(user);
-//        System.out.println(user);
-//
-//        return "redirect:/";
-//    }
-//
-//    @PostMapping("/getOldPassword")
-//    public ResponseEntity<?> getCustValues(@RequestParam Map<String, String> body) {
-//        Map<String, String> respBody = new HashMap<>();
-//        System.out.println("111111111");
-//        System.out.println(body);
-//        User user = userRepository.findByMobileNo(body.get("mobileNo"));
-//        System.out.println(user);
-//        System.out.println(user.getPassword());
-//        respBody.putIfAbsent("password", user.getPassword());
-//        return ResponseEntity.ok(respBody);
-//    }
-//
-//    @PostMapping("/passwordEdit")
-//    public ResponseEntity<?> passwordEdit(@RequestParam Map<String, String> body) {
-//        Map<String, String> respBody = new HashMap<>();
-//        System.out.println("55555555555555");
-//        System.out.println("body:"+body);
-//        User user = userRepository.findByMobileNo(body.get("mobileNo"));
-//        System.out.println(user);
-//        System.out.println(user.getPassword());
-//        user.setPassword(body.get("password"));
-//        System.out.println(user);
-//        userRepository.save(user);
-//        return ResponseEntity.ok(respBody);
-//    }
+
 @RequestMapping("/public/pwd")
 public String changePwdHtmlForm(Model model, HttpSession session){
     System.out.println("password");
@@ -222,35 +175,103 @@ public String changePwdHtmlForm(Model model, HttpSession session){
 
 }
     @PostMapping("/public/pwd")
-    public String changePwd( HttpServletRequest request, Model model,@RequestParam String mobileNo,  @RequestParam String oldPassword, @RequestParam String newPassword,@RequestParam String con_newpassword) {
-        List<String>messages=new ArrayList<>();
+    public String changePwd( HttpServletRequest request, Model model,@RequestParam String mobileNo,  @RequestParam String oldPassword, @RequestParam String newPassword,@RequestParam String con_newpassword,HttpSession session) {
+        List<String> messages = new ArrayList<>();
 
         System.out.println(mobileNo);
         System.out.println(oldPassword);
         System.out.println(newPassword);
         System.out.println(con_newpassword);
-        User user = userRepository.findByMobileNo(mobileNo);
+
+        UserLog users = userLogRepository.findBySessionIdAndStatus(session.getId(), "active");
+        User user = userRepository.findByMobileNo(users.getMobileNo());
+        System.out.println("user:" + user);
+        System.out.println("user1:" + users);
+        if (user.getMobileNo().equals(mobileNo)) {
+            if (user.getPassword().equals(oldPassword)) {
+                if (!newPassword.equals(oldPassword)) {
+                    if (newPassword.equals(con_newpassword)) {
+                        user.setPassword(newPassword);
+                        userRepository.save(user);
+                        model.addAttribute("messages", "Successfully Changed Ur Password");
+                        System.out.println("Successfully Changed Ur Password..");
+                    } else {
+                        model.addAttribute("messages", "Pls match the New Password with Confirm Password..");
+                        System.out.println("Pls match the New Password with Confirm Password..");
+                    }
+
+                } else {
+                    model.addAttribute("messages", "Pls Re-Enter the New Password to Confirm.");
+                    System.out.println("Pls Re-Enter the New Password to Confirm ..");
+
+                }
+            } else {
+                model.addAttribute("messages", "Pls Enter Valid  Old Password");
+                System.out.println("Pls Enter Valid  Old Password..");
+
+            }
+
+        } else {
+            model.addAttribute("messages", "Pls Enter Registered MobileNo");
+            System.out.println("Pls Enter Registered MobileNo");
+
+        }
+        return "redirect:/";
+    }
+        @RequestMapping("/public/managePro")
+    public String changePwdHtmlForm1(Model model, HttpSession session){
+
+        if (session.getAttribute("loggedIn").equals("true") ){
+            UserLog userLog = userLogRepository.findBySessionIdAndStatus(session.getId(), "active");
+            System.out.println(userLog.getMobileNo());
+            String mobNo=userLog.getMobileNo();
+            User user1 = userRepository.findByMobileNo(mobNo);
+            System.out.println(user1.getMobileNo());
+            model.addAttribute("user", user1);
+            System.out.println(user1.getMobileNo());
+            return "entryTemplates/manageProfile";
+        }
+        List messages = new ArrayList<>();
+        messages.add("Login First");
+        model.addAttribute("messages", messages);
+        return "redirect:/loginPage";
+
+    }
+    @PostMapping("/public/managePro")
+    public String manageProUser(@ModelAttribute User user, HttpSession session,Model model) {
+        // Process the user registration
         System.out.println("user:"+user);
-        if(user.getPassword().equals(oldPassword))
-        {
-            user.setPassword(newPassword);
-            userRepository.save(user);
-        }
+        List<String> messages = new ArrayList<>();
+        User user1=userRepository.findByMobileNo(user.getMobileNo());
+        user1.setUserType(user.getUserType());
+        user1.setUserName(user.getUserName());
+        user1.setEmail(user.getEmail());
+        user1.setLocation(user.getLocation());
+        user1.setCountry(user.getCountry());
+        user1.setUadr1(user.getUadr1());
+        user1.setUadr2(user.getUadr2());
+        user1.setUadr3(user.getUadr3());
+        user1.setUadr4(user.getUadr4());
+        user1.setUpincode(user.getUpincode());
 
-         if(newPassword.equals(oldPassword)){
-            model.addAttribute("messages","Pls Don't Use OldPassword as NewPassword" );
-            System.out.println("Pls Don't Use OldPassword as NewPassword" );
-        }
-        if(!newPassword.equals(con_newpassword)){
-            model.addAttribute("messages","Pls Enter NewPassword as ConfNewPassword" );
-            System.out.println("Pls Don't Use OldPassword as NewPassword" );
-        }
-        else {
+        if (user.getReferral().equals("")){
+            user.setUserType("NonMember");
+        }else{
+            System.out.println(referralRepository.findAll());
 
-            model.addAttribute("messages","Pls Enter Valid Password" );
-            System.out.println("Pls Enter Valid Password");
+            Referral referral = referralRepository.findByCode(user1.getReferral().toString());
+
+            user1.setUserType(referral.getType());
+            messages.add(" you Manage Profile Successfully");
+
         }
-        return "entryTemplates/changePassword";
+        userRepository.save(user1);
+        session.setAttribute("verified" , null);
+        session.setAttribute("mobileNo", null);
+        model.addAttribute("messages",messages);
+
+        // Redirect to a success page or perform other actions
+        return "redirect:/"; // Name of the success page or URL
     }
 
 

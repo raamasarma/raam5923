@@ -114,7 +114,7 @@ function showRequests(slotCode,courtCode){
  })
 
  $("#gameMode").change(function(){
- alert(123);
+
      $(".requests").css("display", "none");
             console.log($('#activeSlotCourt').val());
             if ($('#gameMode').val() == "All"){

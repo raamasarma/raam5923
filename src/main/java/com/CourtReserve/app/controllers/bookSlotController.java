@@ -284,7 +284,7 @@ public class bookSlotController {
 
     }
     @PostMapping("/slotViewDataUser")
-    public @ResponseBody String slotViewOrder(HttpServletResponse response, HttpServletRequest request) throws JsonProcessingException {
+    public @ResponseBody String slotViewOrder(HttpServletResponse response,Model model,HttpServletRequest request) throws JsonProcessingException {
         System.out.println("88888888888");
         //System.out.println(body);
         String mobileNo=request.getParameter("mobileNo");
@@ -292,8 +292,8 @@ public class bookSlotController {
         String status=request.getParameter("status");
         LocalDate fromDate= LocalDate.parse(request.getParameter("fromDate"));
         LocalDate toDate= LocalDate.parse(request.getParameter("toDate"));
-        List list=bookSlotRepository.findByGameDateBetweenAndBookedByOrderByIdAsc(fromDate,toDate,mobileNo);
-       // List<BookSlot> list = bookSlotRepository.findByBookedByAndGameDateBetweenAndGameModeAndConfirmStatus(mobileNo,fromDate,toDate,gameMode,status);
+        List<BookSlot> list=bookSlotRepository.findByGameDateBetweenAndBookedByOrderByGameDateAsc(fromDate,toDate,mobileNo);
+        // List<BookSlot> list = bookSlotRepository.findByBookedByAndGameDateBetweenAndGameModeAndConfirmStatus(mobileNo,fromDate,toDate,gameMode,status);
         System.out.println("list45:"+list);
         System.out.println("list46:"+list.size());
 
@@ -306,8 +306,6 @@ public class bookSlotController {
         } else if(!status.equals("all") && !mobileNo.equals("all") && gameMode.equals("all")){
             list = bookSlotRepository.findByGameDateBetweenAndConfirmStatusAndBookedByOrderByIdAsc(fromDate,toDate,status,mobileNo);
         }
-
-
 
         ObjectMapper mapper = mapperBuilder.build();
         String  output = mapper.writeValueAsString(list);
@@ -322,25 +320,50 @@ public class bookSlotController {
     SpringTemplateEngine springTemplateEngine;
     @GetMapping("/slotPdfDataMember")
     public ResponseEntity slotViewPdfOrder(Model model, HttpServletResponse response, HttpServletRequest request) {
-        String mobileNo=request.getParameter("mobileNo");
-        String gameMode=request.getParameter("gameMode");
-        String status=request.getParameter("status");
-        LocalDate fromDate= LocalDate.parse(request.getParameter("fromDate"));
-        LocalDate toDate= LocalDate.parse(request.getParameter("toDate"));
-        List list=bookSlotRepository.findByGameDateBetweenAndBookedByOrderByIdAsc(fromDate,toDate,mobileNo);
-        if(!status.equals("all") && !gameMode.equals("all")){
-            list = bookSlotRepository.findByGameDateBetweenAndBookedByAndConfirmStatusAndGameModeOrderByIdAsc(fromDate,toDate,mobileNo,status,gameMode);
-        } else if(status.equals("all") && !gameMode.equals("all")){
-            list = bookSlotRepository.findByGameDateBetweenAndBookedByAndGameModeOrderByIdAsc(fromDate,toDate,mobileNo,gameMode);
-        } else if(!status.equals("all") && gameMode.equals("all")){
-            list = bookSlotRepository.findByGameDateBetweenAndBookedByAndConfirmStatusOrderByIdAsc(fromDate,toDate,mobileNo,status);
-        } else if(!status.equals("all") && !mobileNo.equals("all") && gameMode.equals("all")){
-            list = bookSlotRepository.findByGameDateBetweenAndConfirmStatusAndBookedByOrderByIdAsc(fromDate,toDate,status,mobileNo);
+        String mobileNo = request.getParameter("mobileNo");
+        String gameMode = request.getParameter("gameMode");
+        String status = request.getParameter("status");
+        LocalDate fromDate = LocalDate.parse(request.getParameter("fromDate"));
+        LocalDate toDate = LocalDate.parse(request.getParameter("toDate"));
+        List<BookSlot> list = bookSlotRepository.findByGameDateBetweenAndBookedByOrderByGameDateAsc(fromDate, toDate, mobileNo);
+        System.out.println("list:" + list);
+        DateTimeFormatter formatters = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        BookSlot b=new BookSlot();
+
+        //Date d=new Date();
+        //list.set(4, (BookSlot) bookSlotRepository.findByGameDate(d));
+        // System.out.println("list1:" + list);
+
+//         for(BookSlot slot: list){
+//             System.out.println("GameDate:"+slot.getGameDate());
+        // LocalDate d= LocalDate.parse(slot.getGameDate().format(formatters));
+        // String date= String.valueOf(slot.getGameDate());
+        //list.set(4,date);
+        //System.out.println("date:"+date);
+        // BookSlot b=new BookSlot();
+        //LocalDate d= (b.getGameDate());
+        // }
+        // int i;
+//        DateTimeFormatter formatters = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+//        for (i = 0; i < list.size(); i++) {
+//            //  System.out.println("date:" + list.get(i).getGameDate());
+//            String date = list.get(i).getGameDate().format(formatters);
+//            //System.out.println("date:" + date);
+//            list.set(3,list.get(i).getGameDate().format(formatters));
+//        }
+        if (!status.equals("all") && !gameMode.equals("all")) {
+            list = bookSlotRepository.findByGameDateBetweenAndBookedByAndConfirmStatusAndGameModeOrderByIdAsc(fromDate, toDate, mobileNo, status, gameMode);
+        } else if (status.equals("all") && !gameMode.equals("all")) {
+            list = bookSlotRepository.findByGameDateBetweenAndBookedByAndGameModeOrderByIdAsc(fromDate, toDate, mobileNo, gameMode);
+        } else if (!status.equals("all") && gameMode.equals("all")) {
+            list = bookSlotRepository.findByGameDateBetweenAndBookedByAndConfirmStatusOrderByIdAsc(fromDate, toDate, mobileNo, status);
+        } else if (!status.equals("all") && !mobileNo.equals("all") && gameMode.equals("all")) {
+            list = bookSlotRepository.findByGameDateBetweenAndConfirmStatusAndBookedByOrderByIdAsc(fromDate, toDate, status, mobileNo);
         }
 
         WebContext context = new WebContext(request, response, request.getServletContext());
         context.setVariable("list", list);
-        String finalhtml = springTemplateEngine.process("customer/slotpdfWeb",context);
+        String finalhtml = springTemplateEngine.process("customer/slotpdfWeb", context);
         ByteArrayOutputStream ops = new ByteArrayOutputStream();
         ITextRenderer renderer = new ITextRenderer();
         System.out.println(finalhtml);
@@ -348,7 +371,7 @@ public class bookSlotController {
         renderer.layout();
         renderer.createPDF(ops, false);
         renderer.finishPDF();
-        return ResponseEntity.ok().header(HttpHeaders.CONTENT_DISPOSITION,"attachment; filename="+fromDate.toString()+"-"+toDate.toString()+".pdf").contentType(MediaType.APPLICATION_OCTET_STREAM).body(ops.toByteArray());
+        return ResponseEntity.ok().header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=" + fromDate.toString() + "-" + toDate.toString() + ".pdf").contentType(MediaType.APPLICATION_OCTET_STREAM).body(ops.toByteArray());
 
     }
 
@@ -360,7 +383,7 @@ public class bookSlotController {
         String status=body.get("status");
         LocalDate fromDate= LocalDate.parse(body.get("fromDate"));
         LocalDate toDate= LocalDate.parse(body.get("toDate"));
-        List<BookSlot> list=bookSlotRepository.findByGameDateBetweenAndBookedByOrderByIdAsc(fromDate,toDate,mobileNo);
+        List<BookSlot> list=bookSlotRepository.findByGameDateBetweenAndBookedByOrderByGameDateAsc(fromDate,toDate,mobileNo);
         if(!status.equals("all") && !gameMode.equals("all")){
             list = bookSlotRepository.findByGameDateBetweenAndBookedByAndConfirmStatusAndGameModeOrderByIdAsc(fromDate,toDate,mobileNo,status,gameMode);
         } else if(status.equals("all") && !gameMode.equals("all")){
@@ -421,8 +444,4 @@ public class bookSlotController {
         return (ResponseEntity) ResponseEntity.status(203);
 
     }
-
-
-
-
 }

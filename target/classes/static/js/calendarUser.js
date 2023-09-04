@@ -61,10 +61,10 @@ $(document).ready(function() {
                        var ToDate = new Date();
                       var userdatte = new Date(datte + "T00:00:00");
                       ToDate.setDate(ToDate.getDate() - 1);
-                      console.log(57);
-                      console.log(ToDate);
-                      console.log(userdatte);
-                      console.log(new Date(userdatte).getTime() < ToDate.getTime());
+//                      console.log(57);
+//                      console.log(ToDate);
+//                      console.log(userdatte);
+//                      console.log(new Date(userdatte).getTime() < ToDate.getTime());
                      if (new Date(userdatte).getTime() < ToDate.getTime()){
                      cal[i].push('<td class="day" style="background-color:lightgrey;"  >' + day++ + '</td>');
 
