@@ -46,7 +46,7 @@ public class bookSlotRestController {
         Map response = new HashMap();
         String date = map.get("date").toString();
         LocalDate dateModified = LocalDate.of(Integer.parseInt(date.split("-")[0]),Integer.parseInt(date.split("-")[1]),Integer.parseInt(date.split("-")[2]) );
-
+        System.out.println("Sharma:"+dateModified);
         Slot slot = slotRepository.findBySlotCode(map.get("slotCode").toString());
         System.out.println("HIIIIIIIIIIIIIII");
         System.out.println("Slot:"+slot);
@@ -163,6 +163,7 @@ public class bookSlotRestController {
 
         }
         LocalDate date= bookSlot.getGameDate();
+        System.out.println("Sharma1:"+date);
         System.out.println("date:"+date);
         DateTimeFormatter formatters = DateTimeFormatter.ofPattern("dd-MM-yyyy");
         String DateinText = date.format(formatters);
@@ -207,7 +208,7 @@ public class bookSlotRestController {
         }
 
         LocalDate date= bookSlot.getGameDate();
-        System.out.println("date:"+date);
+        System.out.println("Sharma2:"+date);
         DateTimeFormatter formatters = DateTimeFormatter.ofPattern("dd-MM-yyyy");
         String DateinText = date.format(formatters);
         System.out.println("text:"+DateinText);
@@ -279,7 +280,7 @@ public class bookSlotRestController {
         Map datesMap = new HashMap<>();
         for (BookSlot bookSlot: bookSlots){
             String date= bookSlot.getGameDate().format(DateTimeFormatter.ofPattern("dd-MM-yyyy"));
-            System.out.println(date);
+            System.out.println("sharma3:"+date);
             if (!datesMap.containsKey(date ) && date.split("-")[1].equals(month) && date.split("-")[2].equals(year) ){
                 int Size = bookSlotRepository.findByGameDateAndConfirmStatus(bookSlot.getGameDate(), "pending").size();
                 int Sizeaccpt = bookSlotRepository.findByGameDateAndConfirmStatus(bookSlot.getGameDate(), "accepted").size();
@@ -309,7 +310,7 @@ public class bookSlotRestController {
     }
     @GetMapping("/getSlots")
     public ResponseEntity getSlots2(@RequestParam(name = "date", defaultValue = "") String date, HttpSession session){
-        System.out.println(date);
+        System.out.println("Sharma4:"+date);
         Map response = new HashMap();
         if (date.equals("")){
             date = LocalDate.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
@@ -415,7 +416,7 @@ public class bookSlotRestController {
     }
     @GetMapping("/getRequests")
     public ResponseEntity getRequests(@RequestParam(name = "date", defaultValue = "") String date,@RequestParam(name = "slotCode") String slotCode, HttpSession session){
-        System.out.println(date);
+        System.out.println("sharma5:"+date);
         LocalDate dateModified = LocalDate.of(Integer.parseInt(date.split("-")[0]),Integer.parseInt(date.split("-")[1]),Integer.parseInt(date.split("-")[2]) );
 
         Map response = new HashMap();

@@ -53,7 +53,7 @@
 <div layout:fragment="content">
 <div class="container">
   <h4 class = "text-middle"> <font color="#000080 ">
-    <b>Reports Booking</b> </font></h4>
+    <b> Booking Reports</b> </font></h4>
   <hr color="blue">
 
     <div class="row auto-align">
@@ -79,8 +79,9 @@
             <select id="bookingStatus" class="form-control" name="username">
                 <option value="all">all</option>
                 <option value="accepted">Accepted</option>
-                <option value="rejected">rejected</option>
-                <option value="notified">notified</option>
+                <option value="pending">Pending</option>
+                <option value="rejected">Rejected</option>
+                <option value="notified">Notified</option>
             </select>
         </div>
       <div class="col">
@@ -117,6 +118,7 @@
                 <th scope="col">GameMode</th>
                 <th scope="col">Booking Status</th>
                 <th scope="col">Booked By </th>
+                <th scope="col">Booked Date </th>
                 <th scope="col">Booking Time</th>
                 <th scope="col">Approved by</th>
                 <th scope="col">User Remarks</th>
@@ -151,7 +153,7 @@ var toDate = $("#toDate").val();
 var gameMode=$("#gameMode").val();
 //var mobileNo=$("#mobileNo").val();
 var status=$("#bookingStatus").val();
-
+$("#purchaseTable tbody tr").remove();
 
 $.ajax({
 async:'false',
@@ -170,7 +172,21 @@ async:'false',
  const jsonObject = JSON.parse(data);
     var tr = '';
     $.each(jsonObject, function(i, item) {
-      tr += '<tr><td>' + item.gameDate + '</td><td>' + item.gameName + '</td><td>' + item.courtCode + '</td><td>' + item.startTime + '</td><td>' + item.endTime + '</td><td>' + item.slotCode + '</td><td>' + item.gameMode + '</td><td>' + item.confirmStatus + '</td><td>' + item.bookedBy + '</td><td>' + item.bookTime + '</td><td>' + item.approvedBy + '</td><td>' + item.remarksByUser + '</td><td>' + item.remarksByAdmin + '</td></tr>';
+ var date=item.gameDate;
+   // alert(date);
+    var  arr = date.split('-');
+    var newDate = arr[2]+'-'+arr[1]+'-'+arr[0];
+    var time=item.bookTime;
+    //alert(time);
+    var bookedDate = time.split("T")[0];
+   // alert(bookedDate);
+    var bookedDate1= bookedDate.split('-')[2]+'-'+ bookedDate.split('-')[1]+'-'+bookedDate.split('-')[0];
+   // alert(bookedDate1);
+var newTime = time.split("T")[1];
+//alert(data);
+
+tr += '<tr><td>' + newDate + '</td><td>' + item.gameName + '</td><td>' + item.courtCode + '</td><td>' + item.startTime + '</td><td>' + item.endTime + '</td><td>' + item.slotCode + '</td><td>' + item.gameMode + '</td><td>' + item.confirmStatus + '</td><td>' + item.bookedBy + '</td><td>' + bookedDate1 + '</td><td>' + newTime + '</td><td>' + item.approvedBy + '</td><td>' + item.remarksByUser + '</td><td>' + item.remarksByAdmin + '</td></tr>';
+
     });
 $('#purchaseTable').append(tr);
 

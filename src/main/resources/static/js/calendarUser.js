@@ -1,5 +1,6 @@
 $(document).ready(function() {
   var currentDate = new Date();
+  //alert(currentDate);
   function generateCalendar(d) {
     function monthDays(month, year) {
       var result = [];
@@ -9,6 +10,7 @@ $(document).ready(function() {
         result.push(i);
       }
       return result;
+      //alert(result);
     }
     Date.prototype.monthDays = function() {
       var d = new Date(this.getFullYear(), this.getMonth() + 1, 0);
@@ -58,6 +60,7 @@ $(document).ready(function() {
                        dayStr="0"+dayStr;
                        }
                       var datte = d.getFullYear()+"-" +monthStr+"-" +(dayStr).toString()
+                      //alert(datte);
                        var ToDate = new Date();
                       var userdatte = new Date(datte + "T00:00:00");
                       ToDate.setDate(ToDate.getDate() - 1);
@@ -99,20 +102,28 @@ $(document).ready(function() {
     $('.caltable').text('');
     if (currentDate.getMonth() === 0) {
       currentDate = new Date(currentDate.getFullYear() - 1, 11);
+       // alert(currentDate);
       generateCalendar(currentDate);
+
     } else {
-      currentDate = new Date(currentDate.getFullYear(), currentDate.getMonth() - 1)
+      currentDate = new Date(currentDate.getFullYear(), currentDate.getMonth() - 1);
+     // alert(currentDate);
       generateCalendar(currentDate);
+
     }
   });
   $('#right').click(function() {
     $('.caltable').html('<tr></tr>');
     if (currentDate.getMonth() === 11) {
       currentDate = new Date(currentDate.getFullYear() + 1, 0);
+    //alert(currentDate);
       generateCalendar(currentDate);
+
     } else {
-      currentDate = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1)
+      currentDate = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1);
+      //alert(currentDate);
       generateCalendar(currentDate);
+
     }
   });
   generateCalendar(currentDate);

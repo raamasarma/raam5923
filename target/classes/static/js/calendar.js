@@ -1,5 +1,6 @@
 $(document).ready(function() {
   var currentDate = new Date();
+  //alert(currentDate);
   function generateCalendar(d) {
     function monthDays(month, year) {
       var result = [];
@@ -90,6 +91,7 @@ $(document).ready(function() {
     } else {
       currentDate = new Date(currentDate.getFullYear(), currentDate.getMonth() - 1)
       generateCalendar(currentDate);
+     // alert(currentDate);
     }
   });
   $('#right').click(function() {
@@ -97,9 +99,11 @@ $(document).ready(function() {
     if (currentDate.getMonth() === 11) {
       currentDate = new Date(currentDate.getFullYear() + 1, 0);
       generateCalendar(currentDate);
+      //alert(currentDate);
     } else {
       currentDate = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1)
       generateCalendar(currentDate);
+     // alert(currentDate);
     }
   });
   generateCalendar(currentDate);

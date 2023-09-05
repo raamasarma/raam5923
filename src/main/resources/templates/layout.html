@@ -85,7 +85,7 @@ body {
 <div th:fragment="navbar_header">
     <div class="header_bar">
         <marquee behavior="scroll" direction="right" scrollamount="12">  <font color=" #ffff00 ">
-            <b>  Welcome to Royal Court     ***    BOOK MY VCOURT         </b>
+            <b>  Welcome to Royal Court     ***    BOOK MY COURT         </b>
         </font></marquee>
     </div>
 </div>
@@ -152,14 +152,40 @@ body {
                 </div>
                 <div class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: Green;" aria-haspopup="true">
-                        <font color="green"><b>Transactions</b></font>
+                        <font color="green"><b>Reports</b></font>
                     </a>
-                    <ul class="dropdown-menu">
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
-                        <li class="navbar-nav">
-                            <a class="nav-link active" aria-current="page" href="/slotViewDataUser">Bookings</a>
+
+                        <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#"> <font color="green"><b>Masters</b></font></a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="/gameDataUser">Game Data</a></li>
+                                <li class="navbar-nav">
+                                    <a class="dropdown-item" href="/courts">Courts</a>
+                                </li>
+                                <li class="navbar-nav">
+                                    <a class="dropdown-item" href="/slots">Slots</a>
+                                </li>
+                                <li class="navbar-nav">
+                                    <a class="dropdown-item" href="/dayTypes">DayTypes</a>
+                                </li>
+                                <li class="navbar-nav">
+                                    <a class="dropdown-item" href="/specialDates">SpecialDates</a>
+                                </li>
+                                <li class="navbar-nav">
+                                    <a class="dropdown-item" href="/games">Games</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#"><font color="green"><b>Transactions</b></font></a>
+                            <ul class="dropdown-menu">
+                                <li class="navbar-nav">
+                                    <a class="nav-link active" aria-current="page" href="/slotViewDataUser">Bookings</a>
+                                </li>
+                            </ul>
                         </li>
                     </ul>
+
                 </div>
 
             </ul>
@@ -270,7 +296,7 @@ body {
             <b> www.royalcourts.com </b>
         </font>
         <font color="black ">
-            <b> @Copyright ©2023 Version_04-09-2023-A</b>
+            <b> @Copyright ©2023 Version_05-09-2023-A</b>
         </font>
 
         <font color=" #ffff00 ">

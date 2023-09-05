@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.w3.org/1999/xhtml"
-      xmlns="http://www.w3.org/1999/html">
+<html lang="en"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="layout" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
-    /* Importing fonts from Google */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
 /* Reseting */
 * {
@@ -18,199 +18,196 @@
 
 body {
     background: #fff;
-    right      : 100%;
+     right      : 100%;
     top       : 100%;
     position  : right;
-    transform : translate(-50%, -50%);
 }
 
 .wrapper {
-    max-width: 400px;
+    max-width: 350px;
     min-height: 100px;
-    margin: 80px auto;
-    padding: 30px 30px 30px 30px;
+    margin: 30px auto;
+    padding: 8px 8px 8px 8px;
     background-color: #fff;
-    border-radius: 10px;
-     right      : 200%;
-     position  : right;
-     top :100%;
-    transform : translate(40%, 40%);
+    border-radius: 20px;
+    right      : 100%;
+    position  : right;
+    top :100%;
     box-shadow: 13px 13px 20px #fff, -13px -13px 20px #fff;
 }
 
+.logo {
+    width: 80px;
+    margin: auto;
+}
 
-.container .name {
+<!--.logo img {-->
+<!--    width: 100%;-->
+<!--    height: 80px;-->
+<!--    object-fit: cover;-->
+<!--    border-radius: 50%;-->
+<!--    box-shadow: 0px 0px 3px #5f5f5f,-->
+<!--        0px 0px 0px 5px #ecf0f3,-->
+<!--        8px 8px 15px #a7aaa7,-->
+<!--        -8px -8px 15px #fff;-->
+<!--}-->
+
+.wrapper .name {
     font-weight: 600;
     font-size: 1.4rem;
     letter-spacing: 1.3px;
     padding-left: 10px;
-    color: red;
+    color: blue;
 }
 
-.container .form-field input {
+.wrapper .form-field input {
     width: 100%;
-    display: #fff;
+    display: block;
     border: none;
     outline: none;
     background: none;
     font-size: 1.2rem;
-    color: #ooo;
+    color: #000;
     padding: 10px 15px 10px 10px;
     /* border: 1px solid red; */
 }
 
-.container .form-field {
+.wrapper .form-field {
     padding-left: 10px;
     margin-bottom: 20px;
     border-radius: 20px;
     box-shadow: inset 8px 8px 8px lightblue, inset -8px -8px 8px lightblue;
 }
 
-.container .form-field .fas {
+.wrapper .form-field .fas {
     color: #fff;
-   right      : 100%;
-    top       : 100%;
-    position  : right;
-    transform : translate(-50%, -50%);
 }
 
-.btn{
+<!--.wrapper .btn-primary {-->
+<!--    box-shadow: none;-->
+<!--    width: 100%;-->
+<!--    height: 40px;-->
+<!--    background-color: green;-->
+<!--    color: #fff;-->
+<!--    border-radius: 25px;-->
+<!--    box-shadow: 3px 3px 3px #b1b1b1,-->
+<!--        -3px -3px 3px #fff;-->
+<!--    letter-spacing: 1.3px;-->
+<!--}-->
+.btn-primary {
     box-shadow: none;
     width: 30%;
     height: 40px;
     background-color: green;
-     float: left;
+
+    color: #fff;
+    border-radius: 25px;
+    gap :1px;
+    box-shadow: 3px 3px 3px #fff,
+<!--        -3px -3px 3px #fff;-->
+    center-spacing: 2px;
+}
+.btn-secondary {
+    box-shadow: none;
+    width: 20%;
+    height: 40px;
+    background-color: green;
+     float: auto-top;
     color: #fff;
     border-radius: 25px;
     box-shadow: 3px 3px 3px #fff,
-        -3px -3px 3px #fff;
-    center-spacing: 1.3px;
+<!--        -3px -3px 3px #fff;-->
+    center-spacing: 0.5px;
 }
-
-.btn-danger{
-  box-shadow: none;
-    width: 90%;
-    height: 30px;
-    background-color: green;
-    float: auto;
-    color: #fff;
-    border-radius: 40px;
-    box-shadow: 8px 8px 8px #fff,
-        -8px -8px 8px #fff;
-    center-spacing: 1.3px;
-}
-
 .btn-primary {
- margin-right: 20px;
+ margin-right: 10px;
+ top:10px;
    float: right;
 
 }
 
 .btn-secondary {
  margin-center: 100px;
+ top:20px;
    float: right;
 }
+
+
 <!--.wrapper .btn:hover {-->
 <!--    background-color: #039BE5;-->
 <!--}-->
 
-.container {
+.wrapper a {
     text-decoration: none;
     font-size: 0.8rem;
     color: red;
-    right      : 100%;
-    top       : 100%;
-    position  : right;
-    transform : translate(40%, 40%);
 }
 
-.container a:hover {
-    color: orange;
-     right      : 100%;
-    top       : 100%;
-    position  : right;
-<!--    transform : translate(-50%, -50%);-->
+.wrapper a:hover {
+    color: red;
 }
 
-@media(max-width: 300px) {
+@media(max-width: 380px) {
     .wrapper {
-    margin: 30px 20px;
-    padding: 40px 15px 15px 15px;
-    right      : 100%;
-    top       : 100%;
-    position  : right;
-<!--    transform : translate(-50%, -50%);-->
+        margin: 30px 20px;
+        padding: 40px 15px 15px 15px;
     }
-}
-h4 {
-  word-spacing: 8px;
-}
-a {
-  word-spacing: 5px;
 }
   </style>
 </head>
 <body>
 <div class="col-md-6 col-lg-10 col-xl-8 offset-xl-9">
-    <div layout:fragment="content" class="container">
-        <div class="wrapper">
-            <!--        <div id="message" style="display: none"></div>-->
-            <h3> <div id="msg" th:replace="fragments/message :: message_html"></div></h3>
+    <div layout:fragment="content" >
+        <div class="container">
+            <div class="wrapper">
 
-            <div class="text-center mt-4 name">
-                <h4> <left><font color="#0000">S I G N      IN  </font></left></h4>
+                <h6> <div id="msg" th:replace="fragments/message :: message_html"></div></h6>
+
+                <div class="text-center mt-4 name">
+                    <h4> <left><font color="#0000">S I G N      IN  </font></left></h4>
+                    <br>
+                </div>
+                <form action="/public/login" method="post">
+                    <form class="p-3 mt-3 ">
+                        <div class="form-field d-flex align-items-center">
+                            <span class="far fa-phone"></span>
+                            <label for="mobileNo"></label><input type="text" name="mobileNo" id="mobileNo" placeholder="MobileNo" for="input Error" required="" class="inputField" maxlength="10" pattern="\d{10}">
+                        </div>
+                        <div class="form-field d-flex align-items-center">
+                            <i class="fa fa-lock"></i>
+                            <label for="password"></label><input type="password" name="password" id="password" placeholder="Password" required="" class="inputField" >
+                        </div>
+                        <!--            <button type="submit" class="btn mt-3">Submit</button>-->
+                        <!--                    <div class="text-center fs-6">-->
+
+                        <!--                        <button type="submit" id="submit" onclick="showMessage('This is my message')" class="btn btn-primary">-->
+                        <!--                            Submit-->
+                        <!--                        </button>-->
+                        <!--                        &lt;!&ndash;                    <button type="button" class="btn btn-primary" id="clear" onclick="document.getElementById('inputText').value = '' ">Clear</button>&ndash;&gt;-->
+                        <!--                        <button type="reset" id="clear" class="btn btn-secondary">-->
+                        <!--                            Clear-->
+                        <!--                        </button>-->
+                        <!--                    </div>-->
+                        <br>
+
+                        <a href="/public/password"><b>Forgot Password</b></a>
+                        <br><br>
+                        <a href="/public/register"><b>Sign up</b></a>
+
+
+
+                        <button type="submit" id="submit" class="btn btn-primary" > Submit</button>
+                        <button type="reset" id="clear" class="btn btn-primary" onclick="document.getElementById('inputText').value = ' ' " >Clear</button>
+
+                    </form>
+                </form>
                 <br>
             </div>
-            <form action="/public/login" method="post">
-                <form class="p-3 mt-3 ">
-                    <div class="form-field d-flex align-items-center">
-                        <span class="far fa-phone"></span>
-                        <label for="mobileNo"></label><input type="text" name="mobileNo" id="mobileNo" placeholder="MobileNo" for="input Error" required="" class="inputField" maxlength="10" pattern="\d{10}">
-                    </div>
-                    <div class="form-field d-flex align-items-center">
-                        <i class="fa fa-lock"></i>
-                        <label for="password"></label><input type="password" name="password" id="password" placeholder="Password" required="" class="inputField" >
-                    </div>
-                    <!--            <button type="submit" class="btn mt-3">Submit</button>-->
-                    <!--                    <div class="text-center fs-6">-->
-
-                    <!--                        <button type="submit" id="submit" onclick="showMessage('This is my message')" class="btn btn-primary">-->
-                    <!--                            Submit-->
-                    <!--                        </button>-->
-                    <!--                        &lt;!&ndash;                    <button type="button" class="btn btn-primary" id="clear" onclick="document.getElementById('inputText').value = '' ">Clear</button>&ndash;&gt;-->
-                    <!--                        <button type="reset" id="clear" class="btn btn-secondary">-->
-                    <!--                            Clear-->
-                    <!--                        </button>-->
-                    <!--                    </div>-->
-                    <br>
-
-                    <a href="/public/password"><b>Forgot Password</b></a>
-                    <br><br>
-                    <a href="/public/register"><b>Sign up</b></a>
-
-
-
-                    <button type="submit" id="submit"  onclick="document.getElementById('inputText').value = ' ' " class="btn btn-primary" > Submit</button>
-                    <button type="reset" id="clear" class="btn btn-primary" onclick="document.getElementById('inputText').value = ' ' " >Clear</button>
-
-                </form>
-            </form>
-            <br>
         </div>
     </div>
 </div>
-</body>
-<script>
-async function showMessage(message) {
-  const dialog = login.createElement("dialog");
-  document.body.appendChild(dialog);
-  dialog.innerText = message;
-  dialog.show();
-  setTimeout(function () {
-    dialog.close();
-  }, 1000);
-}
-
-
+<script src="exp.js">
 </script>
+</body>
+
 </html>

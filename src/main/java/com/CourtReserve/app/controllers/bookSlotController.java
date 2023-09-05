@@ -54,6 +54,7 @@ public class bookSlotController {
     }
 
     DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+    DateTimeFormatter dtf1 = DateTimeFormatter.ofPattern("dd-MM-yyyy");
     private final CourtRepository courtRepository;
     private final BookSlotRepository bookSlotRepository;
     @Autowired
@@ -64,13 +65,16 @@ public class bookSlotController {
     public String getSlots(Model model, @RequestParam(name = "date", defaultValue = "") String date, HttpSession session){
         if (date.equals("")){
             date = LocalDate.now().format(dtf);
+            System.out.println("RAaam1:"+date);
         }
         LocalDate dateModified = LocalDate.of(Integer.parseInt(date.split("-")[0]),Integer.parseInt(date.split("-")[1]),Integer.parseInt(date.split("-")[2]) );
         SpecialDates specialDate = specialDatesRepository.findByDate(date);
+        System.out.println("RAaam2:"+specialDate);
         String dayType = "REGL";
         System.out.println(dateModified.getDayOfWeek());
         if (!(specialDate == null)){
             dayType = specialDate.getDayType();
+            System.out.println("RAaam3:"+dayType);
         } else if (dateModified.getDayOfWeek().equals(DayOfWeek.SATURDAY) ||dateModified.getDayOfWeek().equals(DayOfWeek.SUNDAY) ) {
             dayType = "WEND";
         }
@@ -78,15 +82,16 @@ public class bookSlotController {
         List<Map> slotListed = new ArrayList<Map>();
         for (Slot slot : slots){
             System.out.println(57);
-            System.out.println(date);
-            System.out.println(LocalDate.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd")));
+            String text= String.valueOf(LocalDate.parse(date).format(dtf1));
+            System.out.println("RAaam4:"+text);
+            System.out.println("RAaam5:"+LocalDate.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd")));
 
 
 
             if (date.equals(LocalDate.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd")))){
                 Integer hourNow = LocalDateTime.now().getHour();
                 System.out.println("hour:"+hourNow);
-                System.out.println("date:"+date);
+                System.out.println("RAaam6:"+date);
                 if(Integer.parseInt(slot.getStartHour().toString().split(":")[0] )<= hourNow+1){
                     continue;
                 }
@@ -148,13 +153,11 @@ public class bookSlotController {
                 statusColor = "blue";
                 status = bookSlot1.getConfirmStatus()+"-"+bookSlot1.getGameMode();
                 LocalDate date1= bookSlot1.getGameDate();
-                System.out.println("date:"+date);
+                String text1= String.valueOf(LocalDate.parse(date).format(dtf1));
+                System.out.println("RAaam7:"+text1);
                 DateTimeFormatter formatters = DateTimeFormatter.ofPattern("dd-MM-yyyy");
                 String DateinText = date1.format(formatters);
                 System.out.println("text:"+DateinText);
-//                if(DateinText>= LocalDate.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd")).toString()){
-//                    continue;
-//                }
             }
 
             slotMap.putIfAbsent("status",status);
@@ -167,9 +170,15 @@ public class bookSlotController {
         System.out.println("bookSlot2:"+bookSlot2);
         System.out.println("bookSlot2:"+bookSlot2);
         System.out.println(slots);
+        System.out.println("@@@@@@@@@@@@@@@@@");
+        System.out.println("Date:"+date);
+        LocalDate d1= LocalDate.parse(date);
+        System.out.println("D1:"+d1);
+        String d2=d1.format(dtf1);
+        System.out.println("D2:"+ d1.format(dtf1));
         model.addAttribute("slots", slotListed);
         model.addAttribute("slots", slotListed);
-        model.addAttribute("date", date);
+        model.addAttribute("date", d2);
         model.addAttribute("courts", courtRepository.findAll());
         return "customer/bookSlotUser";
     }
@@ -218,7 +227,7 @@ public class bookSlotController {
 //    }
 
     @RequestMapping("/myRequests")
-    public String myRequests(Model model, HttpSession session) throws ParseException {
+    public <bookSlot> String myRequests(Model model, HttpSession session) throws ParseException {
         Map user = (Map) session.getAttribute("user");
         List<BookSlot> bookSlots = bookSlotRepository.findByBookedByOrderByGameDateDesc(user.get("mobileNo").toString());
         Iterable<Court> courts = courtRepository.findAll();
@@ -232,21 +241,24 @@ public class bookSlotController {
             } else if (bookSlot.getConfirmStatus().equals("rejected")) {
                 statusColor = "danger";
             }
+
+
             LocalDate date = bookSlot.getGameDate();
+            //String gameMode=bookSlot.getGameMode();
+            //char a=gameMode.charAt(0);
+            System.out.println("Raam:" + date);
+           // System.out.println("Raam:" + gameMode);
             System.out.println("date:" + date);
             DateTimeFormatter formatters = DateTimeFormatter.ofPattern("dd-MM-yyyy");
             String DateinText = date.format(formatters);
             System.out.println("text:" + DateinText);
            String date3=LocalDate.now().format(formatters);
-//           Date d =new Date();
-//            System.out.println(d);
-         //   SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-         //   System.out.println(sdf.parse(String.valueOf(date)).before(sdf.parse(date3)));
-           // if (DateinText.equals(date3)) { // it is working but not our achievement
                 bookslotMap.put("cardColor", statusColor);
                 bookslotMap.put("court", court);
                 bookslotMap.put("gameDateMod", DateinText);
                 bookslotMap.put("slot", slotRepository.findBySlotCode(bookSlot.getSlotCode()));
+           // bookslotMap.put("a", a);
+
                 bookslotsMap.add(bookslotMap);
             }
       // }

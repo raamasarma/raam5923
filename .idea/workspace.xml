@@ -5,51 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="000b03e8-8eb7-4df3-aafe-718948a2d934" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CourtReserverplus.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jpa-buddy.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/CourtReserve/app/controllers/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/CourtReserve/app/controllers/GameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/CourtReserve/app/controllers/bookSlotController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/CourtReserve/app/controllers/bookSlotController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/CourtReserve/app/controllers/entryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/CourtReserve/app/controllers/entryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/CourtReserve/app/controllers/slotController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/CourtReserve/app/controllers/slotController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/CourtReserve/app/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/CourtReserve/app/models/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/CourtReserve/app/repositories/BookSlotRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/CourtReserve/app/repositories/BookSlotRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/bookslot.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/bookslot.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/CourtReserve/app/restControllers/bookSlotRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/CourtReserve/app/restControllers/bookSlotRestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/calendar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/calendar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/calendarUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/calendarUser.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/viewSlots.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/viewSlots.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/customer/myRequests.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/customer/myRequests.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/customer/viewSlotsUser.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/customer/viewSlotsUser.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/entryTemplates/changePassword.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/entryTemplates/changePassword.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/entryTemplates/password.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/entryTemplates/password.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/entryTemplates/verification.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/entryTemplates/verification.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/entryTemplates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/entryTemplates/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/layout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/CourtReserve/app/controllers/GameController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/CourtReserve/app/controllers/GameController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/CourtReserve/app/controllers/bookSlotController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/CourtReserve/app/controllers/bookSlotController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/CourtReserve/app/controllers/entryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/CourtReserve/app/controllers/entryController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/CourtReserve/app/controllers/slotController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/CourtReserve/app/controllers/slotController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/CourtReserve/app/models/BookSlot.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/CourtReserve/app/models/BookSlot.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/CourtReserve/app/models/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/CourtReserve/app/models/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/CourtReserve/app/models/UserLog.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/CourtReserve/app/models/UserLog.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/CourtReserve/app/repositories/BookSlotRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/CourtReserve/app/repositories/BookSlotRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/CourtReserve/app/restControllers/bookSlotRestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/CourtReserve/app/restControllers/bookSlotRestController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/CourtReserve/app/restControllers/entryRestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/CourtReserve/app/restControllers/entryRestController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/bookslot.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/bookslot.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/calendarUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/calendarUser.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/admin/viewSlots.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/admin/viewSlots.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/customer/bookSlotUser.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/customer/bookSlotUser.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/customer/viewSlotsUser.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/customer/viewSlotsUser.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/entryTemplates/changePassword.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/entryTemplates/changePassword.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/entryTemplates/password.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/entryTemplates/password.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/entryTemplates/verification.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/entryTemplates/verification.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/layout.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +44,7 @@
     "CourtReserverplus.wasFacetEverAdded": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/panda project/BookMyCourtVer1/src/main/resources/templates/entryTemplates"
+    "last_opened_file_path": "C:/panda project/Raam/Inv-Pdf"
   }
 }]]></component>
   <component name="RecentsManager">
